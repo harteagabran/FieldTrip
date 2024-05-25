@@ -1,0 +1,12 @@
+{% extends "trip/base.html" %} {% block title %} Register {% endblock %}
+
+{% block content %}
+<h1 class="display1">Register</h1>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Register</button>
+    <a href="{% url 'home' %}" class="btn btn-secondary">Cancel</a>
+</form>
+<p class="text-secondary">Already have an account? <a href="{% url 'login' %}" class="btn btn-dark">Login</a></p>
+{% endblock %}
